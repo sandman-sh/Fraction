@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─── */
+:root {
+  /* Design palette */
+  --neo-bg: #fefce8;
+  --neo-fg: #0a0a0a;
+  --neo-yellow: #facc15;
+  --neo-purple: #a78bfa;
+  --neo-pink: #f472b6;
+  --neo-blue: #38bdf8;
+  --neo-green: #4ade80;
+  --neo-red: #f87171;
+  --neo-border: 3px solid #0a0a0a;
+  --neo-shadow: 6px 6px 0px #0a0a0a;
+  --neo-shadow-sm: 3px 3px 0px #0a0a0a;
+  --neo-shadow-lg: 10px 10px 0px #0a0a0a;
+  --neo-radius: 0px;
+  
+  /* Canvas palette */
+  --canvas-bg: #ffffff;
+  --canvas-surface: #ffffff;
+  --canvas-border: #e4e4e7;
+  --canvas-muted: #71717a;
+  --canvas-accent: #facc15;
+}
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+/* ─── Premium Component Classes ─── */
+
+.neo-container {
+  background: var(--neo-bg);
+  color: var(--neo-fg);
+}
+
+.neo-card {
+  background: #fff;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+}
+
+.neo-card-sm {
+  background: #fff;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow-sm);
+}
+
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  border: var(--neo-border);
+  box-shadow: var(--neo-shadow);
+  cursor: pointer;
+  transition: transform 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.neo-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #0a0a0a;
+}
+
+.neo-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px #0a0a0a;
+}
+
+.neo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+.neo-btn-yellow {
+  background: var(--neo-yellow);
+  color: var(--neo-fg);
+}
+
+.neo-btn-dark {
+  background: var(--neo-fg);
+  color: #fff;
+  box-shadow: 6px 6px 0px var(--neo-yellow);
+}
+.neo-btn-dark:hover {
+  box-shadow: 8px 8px 0px var(--neo-yellow);
+}
+.neo-btn-dark:active {
+  box-shadow: 3px 3px 0px var(--neo-yellow);
+}
+
+.neo-btn-purple {
+  background: var(--neo-purple);
+  color: var(--neo-fg);
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.neo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.neo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Floating shapes animation ─── */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(6deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-4deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 5s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 3.5s ease-in-out infinite; }
+
+/* ─── Pulse ring animation ─── */
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+.animate-pulse-ring { animation: pulse-ring 2.5s ease-in-out infinite; }
+
+/* ─── Dot grid pattern ─── */
+.dot-grid {
+  background-image: radial-gradient(circle, #d4d4d8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--neo-yellow) 0%, var(--neo-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Canvas view ─── */
+.canvas-surface {
+  background: var(--canvas-bg);
+  color: #18181b;
+}
+
+.canvas-panel {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--canvas-border);
+  color: #18181b;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.canvas-panel input,
+.canvas-panel select,
+.canvas-panel textarea {
+  background: #ffffff !important;
+  border: 1px solid #e4e4e7 !important;
+  color: #18181b !important;
+}
+
+.canvas-btn-active {
+  background: var(--canvas-accent);
+  color: #000;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.25);
+}
+
+.canvas-btn-idle {
+  color: #52525b;
+  background: transparent;
+}
+.canvas-btn-idle:hover {
+  color: #18181b;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Toast ─── */
+.toast-success { background: #052e16; border: 1px solid #15803d; color: #86efac; }
+.toast-error   { background: #450a0a; border: 1px solid #b91c1c; color: #fca5a5; }
+.toast-info    { background: #18181b; border: 1px solid #3f3f46; color: #d4d4d8; }
+
+/* ─── Spin animation (Tailwind v4 compat) ─── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ─── Responsive hero grid ─── */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
