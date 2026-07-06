@@ -226,7 +226,7 @@ app.get("/api/batch-tx/:id", async (req, res) => {
 
 app.get("/api/balance/:address", async (req, res) => {
   const { address } = req.params;
-  const rpcUrl = process.env.ARC_TESTNET_RPC ?? "https://rpc.testnet.arc.network";
+  const rpcUrl = process.env.ARC_TESTNET_RPC ?? "https://rpc.testnet.arc-node.thecanteenapp.com/v1/swrm_3e98784aef12ddb795b7025cbf883a53ca15fa76869353ca4fa132f3de3e9082";
   try {
     const data = "0x70a08231000000000000000000000000" + address.substring(2);
     const response = await fetch(rpcUrl, {
