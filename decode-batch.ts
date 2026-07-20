@@ -34,7 +34,7 @@ try {
   console.error("Failed to parse .env file:", e);
 }
 
-const RPC = process.env.ARC_TESTNET_RPC ?? "https://rpc.testnet.arc-node.thecanteenapp.com/v1/swrm_3e98784aef12ddb795b7025cbf883a53ca15fa76869353ca4fa132f3de3e9082";
+const RPC = process.env.ARC_TESTNET_RPC ?? "https://rpc.testnet.arc.network";
 const GATEWAY_API =
   process.env.GATEWAY_API ?? "https://gateway-api-testnet.circle.com";
 const SETTLEMENT_WINDOW_MS = 10_000;

@@ -36,7 +36,7 @@ import {
 /* ─── Constants ─── */
 const PLATFORM_WALLET = "0x933a2405f84c224be1ef373ba16e992e1f459682";
 const ARC_TESTNET_HEX = "0x4cef52";
-const RPC_ENDPOINT = import.meta.env.VITE_ARC_TESTNET_RPC || "https://rpc.testnet.arc-node.thecanteenapp.com/v1/swrm_3e98784aef12ddb795b7025cbf883a53ca15fa76869353ca4fa132f3de3e9082";
+const RPC_ENDPOINT = import.meta.env.VITE_ARC_TESTNET_RPC || "https://rpc.testnet.arc.network";
 
 /* ─── Helpers ─── */
 function b64encode(obj: any) {
