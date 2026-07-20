@@ -338,7 +338,7 @@ If the user asks you to audit or align their design:
   }
 });
 
-const PORT = 3000;
+const PORT = 3002;
 if (process.env.NODE_ENV !== "production" && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`listening on http://localhost:${PORT}`);

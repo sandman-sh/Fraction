@@ -39,7 +39,7 @@ const client = new GatewayClient({
   privateKey: pk as `0x${string}`,
 });
 
-const url = process.argv[2] ?? "http://localhost:3000/hello-world";
+const url = process.argv[2] ?? "http://localhost:3002/hello-world";
 console.log(`paying ${url}`);
 
 const { status, data } = await client.pay(url);
