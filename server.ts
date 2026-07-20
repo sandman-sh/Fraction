@@ -28,7 +28,7 @@ try {
 
 import { createGatewayMiddleware } from "@circle-fin/x402-batching/server";
 import { formatUnits } from "viem";
-import { decodeBatch } from "./decode-batch";
+import { decodeBatch } from "./decode-batch.js";
 
 type PaidRequest = express.Request & {
   payment?: {
